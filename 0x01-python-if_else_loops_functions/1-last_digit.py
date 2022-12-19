@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-mod = number % 10
+
+if number < 0:
+    mod = (number * -1) % 10
+else:
+    mod = number % 10
 str = "Last digit of"
 
 if mod > 5:
