@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-for c in range(122, 96, -1):
+def checkAl(c):
     if c % 2 == 0:
-        print(chr(c), end="")
+        return (chr(c + 32))
     else:
-        print(chr(c - 32), end="")
+        return (chr(c))
+
+
+for alph in range(90, 64, -1):
+    print("{}".format(checkAl(alph)), end="")
