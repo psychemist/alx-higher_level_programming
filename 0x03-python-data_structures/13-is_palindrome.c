@@ -79,30 +79,30 @@ int is_palindrome(listint_t **head)
 		prev_slow = slow;
 		slow = slow->next;
 		fast = fast->next->next;
-
-		if (fast != NULL) /* fast == NULL in even list*/
-		{
-			midnode = slow; /* Detach middle node from odd list */
-			slow = slow->next;
-		}
-
-		prev_slow->next = NULL; /* Terminate first half */
-		half = slow;
-		reverse_list(&half); /* Reverse second half */
-		res = compare_lists(*head, half); /* Compare with first half */
-
-		/* Reverse second half and reconstruct original list */
-		reverse_list(&half);
-		if (midnode != NULL)
-		{
-			prev_slow->next = midnode; /* Reinsert middle node */
-			midnode->next = half;
-		}
-		else
-		{
-			prev_slow->next = half;
-		}
 	}
+
+	if (fast != NULL) /* fast == NULL in even list*/
+	{
+		midnode = slow; /* Detach middle node from odd list */
+		slow = slow->next;
+	}
+
+	prev_slow->next = NULL; /* Terminate first half */
+	half = slow;
+	reverse_list(&half); /* Reverse second half */
+	res = compare_lists(*head, half); /* Compare with first half */
+
+	/* Reverse second half and reconstruct original list */
+	reverse_list(&half);
+	if (midnode != NULL)
+	{
+		prev_slow->next = midnode; /* Reinsert middle node */
+		midnode->next = half;
+	}
+	else
+	{
+		prev_slow->next = half;
+	}	
 	return (res);
 }
 
