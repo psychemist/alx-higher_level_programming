@@ -1,33 +1,15 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if type(roman_string) != str or roman_string is None:
+    if type(roman_string) is not str or roman_string is None:
         return 0
     arab_num = 0
-    for i in range(len(roman_string)):
-        if roman_string[i] == 'M':
-            if i and roman_string[i-1] == 'C':
-                arab_num -= 200
-            arab_num += 1000
-        if roman_string[i] == 'D':
-            if i and roman_string[i-1] == 'C':
-                arab_num -= 200
-            arab_num += 500
-        if roman_string[i] == 'C':
-            if i and roman_string[i-1] == 'X':
-                arab_num -= 20
-            arab_num += 100
-        if roman_string[i] == 'L':
-            if i and roman_string[i-1] == 'X':
-                arab_num -= 20
-            arab_num += 50
-        if roman_string[i] == 'X':
-            if i and roman_string[i-1] == 'I':
-                arab_num -= 2
-            arab_num += 10
-        if roman_string[i] == 'V':
-            if i and roman_string[i-1] == 'I':
-                arab_num -= 2
-            arab_num += 5
-        if roman_string[i] == 'I':
-            arab_num += 1
+    nums = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+    for i, x in zip(roman_string, roman_string[1:]):
+        if i not in nums.keys():
+            return 0
+        elif nums[i] >= nums[x]:
+            arab_num += nums[i]
+        else:
+            arab_num -= nums[i]
+    arab_num += nums[roman_string[-1]]
     return arab_num
