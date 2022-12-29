@@ -45,6 +45,9 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
+        """Prints the square instance with the # character
+           or nothing if size is 0
+        """
         if self.size == 0:
             print()
         else:
