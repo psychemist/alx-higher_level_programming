@@ -8,7 +8,7 @@ Defines a square based on 3-square.py
 class Square:
     """
     Instantiates square object with a public instance method,
-    a private instance attribute and a getter and setterproperties
+    a private instance attribute, and getter and setter properties
     """
     def __init__(self, size=0):
         """
