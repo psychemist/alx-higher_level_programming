@@ -13,7 +13,7 @@ class Square:
         """
         Initializes an instance of the Square class
 
-	Args:
+        Args:
             size (int): length of one side of square
         """
         self.__size = size
