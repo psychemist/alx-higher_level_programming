@@ -14,16 +14,20 @@ class Square:
         Initializes a new square instance
 
         Args: size (int): Length of sides of square
+
         """
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = size
+            self.__size = size  #: int: Private instance attribute
 
     def area(self):
-        """
-        Returns current square area
+        """Calculates the area of a square
+
+        Returns:
+            int: Area of the square
+
         """
         return self.__size ** 2
