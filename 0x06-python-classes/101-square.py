@@ -93,6 +93,6 @@ class Square:
         else:
             string += "\n" * self.__position[1]
             string += "\n".join([" " * self.__position[0] +
-                             "#" * self.__size
-                             for row in range(self.__size)])
+                                 "#" * self.__size
+                                 for row in range(self.__size)])
         return string
