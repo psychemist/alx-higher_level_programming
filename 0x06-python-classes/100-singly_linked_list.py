@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """
 Module 100-singly_linked_list
 Defines singly linked list and node classes
@@ -70,7 +69,7 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """
-        Inserts a new Node into the correct position in the list (ascending order)
+        Inserts a new Node into correct position in the list (ascending order)
         """
         new_node = Node(value)
 
@@ -78,13 +77,11 @@ class SinglyLinkedList:
         if self.__head is None:
             new_node.next_node = self.__head
             self.__head = new_node
-            return
 
         # Special case for head at end
         elif self.__head.data >= new_node.data:
             new_node.next_node = self.__head
             self.__head = new_node
-            return
 
         else:
             # Locate the node before the point of insertion
@@ -103,8 +100,9 @@ class SinglyLinkedList:
         """
         string = ""
         temp = self.__head
+
         while temp is not None:
-            string += string(temp.data)
+            string += str(temp.data)
             temp = temp.next_node
 
             if temp is not None:
