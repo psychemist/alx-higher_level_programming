@@ -26,6 +26,20 @@ class Square:
         self.position = position
         """position(int, int): tuple of two +ve int"""
 
+    def __str__(self):
+        """
+        String representation of the square objects called by print function
+        """
+        string = ""
+        if self.__size == 0:
+            return string
+        else:
+            string += "\n" * self.__position[1]
+            string += "\n".join([" " * self.__position[0] +
+                                 "#" * self.__size
+                                 for row in range(self.__size)])
+        return string
+
     @property
     def size(self):
         """
@@ -82,17 +96,3 @@ class Square:
             print("\n".join([" " * self.__position[0] +
                              "#" * self.__size
                              for row in range(self.__size)]))
-
-    def __str__(self):
-        """
-        String representation of the square objects called by print function
-        """
-        string = ""
-        if self.__size == 0:
-            return string
-        else:
-            string += "\n" * self.__position[1]
-            string += "\n".join([" " * self.__position[0] +
-                                 "#" * self.__size
-                                 for row in range(self.__size)])
-        return string
