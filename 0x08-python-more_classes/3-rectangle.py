@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Module 2-rectangle.py
-Defines a rectangle based on 1-rectangle.py
+Module 3-rectangle.py
+Defines a rectangle based on 2-rectangle.py
 """
 
 
