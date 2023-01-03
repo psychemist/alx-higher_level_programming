@@ -142,6 +142,7 @@ class Rectangle:
             return self
         else:
             return other
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
@@ -166,6 +167,9 @@ class Rectangle:
     def square(cls, size=0):
         """
         Creates a square from Rectangle class
+
+        Attribute:
+            size (int): length of one side of rectangle
 
         Returns:
             new Rectangle instance with width == height == size
