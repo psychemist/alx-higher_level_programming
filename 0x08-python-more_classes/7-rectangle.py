@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Module 6-rectangle.py
-Defines a rectangle based on 5-rectangle.py
+Module 7-rectangle.py
+Defines a rectangle based on 6-rectangle.py
 """
 
 
@@ -84,7 +84,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return string
         else:
-            string += "\n".join([Rectangle.print_symbol * self.width
+            string += "\n".join([str(self.print_symbol) * self.width
                                  for row in range(self.height)])
         return string
 
@@ -92,11 +92,11 @@ class Rectangle:
         """
         Returns: canonical string representation of rectangle instance object
         """
-        return f"Rectangle ({self.width}, {self.height})"
+        return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
         """
-        Prints an exit message when a rectangle object instance is deleted
+        Prints an exit message when a rectangle instance object is deleted
         """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
