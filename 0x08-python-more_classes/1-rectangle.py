@@ -8,7 +8,6 @@ Defines a rectangle based on 0-rectangle.py
 class Rectangle:
     """
     Defines a rectangle class with private instance attributes
-    and public instance methods
 
     Attributes:
         width (int): length of shorter side of rectangle
