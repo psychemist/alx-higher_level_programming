@@ -101,47 +101,6 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
-    def __eq__(self, other):
-        """
-        Compares and returns if equal
-        """
-        return self.area == other.area
-
-    def __ne__(self, other):
-        """
-        Compares and returns if not equal
-        """
-        return self.area != other.area
-
-    def __lt__(self, other):
-        """
-        Compares and returns if lesser than
-        """
-        return self.area < other.area
-
-    def __le__(self, other):
-        """
-        Compares and returns if lesser than or equal to
-        """
-        return self.area <= other.area
-
-    def __gt__(self, other):
-        """
-        Compares and returns if greater than
-        """
-        return self.area > other.area
-
-    def __ge__(self, other):
-        """
-        Compares two rectangle instance objects based on area
-
-        Returns:
-            bool: True if self is greater than/equal to other, False otherwise
-        """
-        if self.area >= other.area:
-            return self
-        else:
-            return other
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
@@ -155,9 +114,7 @@ class Rectangle:
         elif isinstance(rect_2, Rectangle) is False:
             raise TypeError("rect_2 must be an instance of Rectangle")
 
-        """if rect_1 >= rect_2:
+        if rect_1.area() >= rect_2.area():
             return rect_1
         else:
-            return rect_2"""
-
-        return rect_1 > rect_2
+            return rect_2
