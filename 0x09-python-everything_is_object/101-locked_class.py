@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Module lockedclass
-Defines a locked class
+Defines a locked class with no class or object attribute
 """
 
 
