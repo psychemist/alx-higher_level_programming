@@ -5,8 +5,6 @@ lc = LockedClass()
 lc.first_name = "John"
 
 print(lc.first_name)
-print("If first name printed, it works!")
-print("Now let's check setting another attribute...")
 
 try:
     lc.last_name = "Snow"
