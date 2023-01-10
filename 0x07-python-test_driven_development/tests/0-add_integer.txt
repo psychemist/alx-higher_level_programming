@@ -53,7 +53,19 @@ Test other argument data types
     ...
     TypeError: b must be an integer
     
+Test max/min numbers ("inf" is infinity):
+    >>> print(add_integer(float("inf")))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+    
+    >>> print(add_integer(float("-inf")))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
 
-Test float NaN argument
-
-Test float overflow
+Test special float NaN (not a number):
+    >>> print(add_integer(float("NaN")))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
