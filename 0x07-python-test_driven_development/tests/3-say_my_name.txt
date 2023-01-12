@@ -1,0 +1,66 @@
+"""external documentation for 3-say_my_name.py"""
+# run tests with python3 -m doctest -v ./tests/3-say_my_name.txt
+
+Import test module function:
+3-say_my_name prints a new string
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+SUCCESS CASES
+
+Test two strings as arguments
+    >>> say_my_name("Agu", "Obunadike")
+    My name is Agu Obunadike
+    >>> say_my_name("Rick", "Sanchez")
+    My name is Rick Sanchez
+
+Test no keyword argument
+    >>> say_my_name("Ikechukwu")
+    My name is Ikechukwu 
+
+Test variable as argument
+    >>> nom = "Moriarty"
+    >>> say_my_name(nom)
+    My name is Moriarty 
+
+
+FAIL CASES
+
+Test missing positional argument
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test extra arguments
+    >>> say_my_name("John", "Jane", "Doe")
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+Test non-string data type arguments
+    >>> say_my_name(15)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Morty", ["Smith"])
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test undefined variables as arguments
+    >>> say_my_name(prenom)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'prenom' is not defined
+
+    >>> say_my_name("Ignatius", name)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'name' is not defined

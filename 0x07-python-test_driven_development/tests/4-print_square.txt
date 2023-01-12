@@ -1,0 +1,59 @@
+"""external documentation for 4-print_square.py"""
+# run tests with python3 -m doctest -v ./tests/4-print_square.txt
+
+Import test module function:
+4-print_square prints a square with the character #
+>>> print_square = __import__('4-print_square').print_square
+
+
+SUCCESS CASES
+
+Test integer argument
+    >>> print_square(2)
+    ##
+    ##
+
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+
+FAIL CASES
+
+Test no argument
+    >>> print_square(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Test extra arguments
+    >>> print_square(2, 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() takes 1 positional argument but 2 were given
+
+Test non-integer argument
+    >>> print_square("hello world")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square((1, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Test negative integer argument
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+Test negative float argument
+    >>> print_square(-2.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
