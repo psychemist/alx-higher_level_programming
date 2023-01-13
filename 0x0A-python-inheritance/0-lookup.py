@@ -11,7 +11,7 @@ def lookup(obj):
     Lists the available data and method attributes of an object
 
     Args:
-        obj (object): class or instance object 
+        obj (object): class or instance object
 
     Returns:
         (list): list object containing attribute in module namespace
