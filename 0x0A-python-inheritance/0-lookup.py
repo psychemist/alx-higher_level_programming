@@ -16,4 +16,4 @@ def lookup(obj):
     Returns:
         (list): list object containing attribute in module namespace
     """
-    return obj.__dict__
+    return dir(obj)
