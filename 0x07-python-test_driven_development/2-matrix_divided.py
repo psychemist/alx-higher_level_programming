@@ -7,6 +7,14 @@ Defines a function that divides all elements of a matrix
 
 def matrix_divided(matrix, div):
     """
+    Divides all elments of a matrix by a number
+
+    Args:
+        matrix (list): list of lists of integers or floats
+        div (integer/float): divisor of the equation
+
+    Returns:
+        (list): list of floats rounded to 2 places
     """
     err = "matrix must be a matrix (list of lists) of integers/floats"
     for row in matrix:

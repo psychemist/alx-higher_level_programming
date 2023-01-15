@@ -68,6 +68,12 @@ Test division by zero
     ...
     ZeroDivisionError: division by zero
 
+Test division by non-integer or float
+    >>> matrix_divided(matrix, "2")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
 Test matrix with different row sizes
     >>> matrix_divided(lmatrix, 3)
     Traceback (most recent call last):
