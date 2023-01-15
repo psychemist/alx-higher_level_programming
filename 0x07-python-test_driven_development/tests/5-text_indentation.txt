@@ -1,0 +1,57 @@
+"""external documentation for 5-text_indentation.py"""
+# run tests with python3 -m doctest -v ./tests/5-text_indentation.txt
+
+Import test module function:
+text_indentation prints 2 new lines after the period, colon and question mark characters
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text1 = "The ALX Software Engineering curriculum is amazing. How? I'll explain: The program teaches you C, Python, JavaScript, SQL, Git, and Linux OS"
+
+>>> text2 = "Especially for students, ALX Software Engineering School is the best decision!"
+
+SUCCESS CASES
+
+Test string with special characters
+    >>> text_indentation(text1) #doctest: +REPORT_NDIFF
+    The ALX Software Engineering curriculum is amazing.
+    <BLANKLINE>
+    How?
+    <BLANKLINE>
+    I'll explain:
+    <BLANKLINE>
+    The program teaches you C, Python, JavaScript, SQL, Git, and Linux OS
+
+Test string without special charcaters
+    >>> text_indentation(text2)
+    Especially for students, ALX Software Engineering School is the best decision!
+
+
+FAIL CASES
+
+Test missing argument
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test no argument
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Text multiple arguments
+    >>> text_indentation(text1, text2)
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+Test empty string
+    >>> text_indentation("") #doctest: +REPORT_NDIFF
+    <BLANKLINE>
+
+Test non-string argument
+    >>> text_indentation(1000000)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
