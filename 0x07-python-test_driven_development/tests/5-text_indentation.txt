@@ -47,8 +47,7 @@ Text multiple arguments
     TypeError: text_indentation() takes 1 positional argument but 2 were given
 
 Test empty string
-    >>> text_indentation("") #doctest: +REPORT_NDIFF
-    <BLANKLINE>
+    >>> text_indentation("")#doctest: +REPORT_NDIFF
 
 Test non-string argument
     >>> text_indentation(1000000)
