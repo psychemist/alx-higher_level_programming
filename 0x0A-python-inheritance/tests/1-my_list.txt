@@ -58,16 +58,3 @@ Test no sorted append with negative number
     >>> list1.append(-1)
     >>> list1.print_sorted()
     [-1, 5, 10, 50, 100, 500, 1000, 5000, 10000]
-
-
-"""
-Test present: check instantiation
-** Test present: check inherits from list
-** Test present: check __str__
-** Test present: check append()
-** Test present: check print_sorted() with sorted append
-** Test present: check print_sorted() with not sorted append
-** Test present: check print_sorted() with no sorted append with negative number
-** Test present: check print_sorted() with empty list
-** Test present: check print_sorted() returns a new list
-"""
