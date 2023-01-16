@@ -1,0 +1,73 @@
+"""
+Doctest for MyList class
+run test with python3 -m doctest -v tests/1-my_list.txt
+"""
+
+Import test class
+>>> MyList = __import__('1-my_list').MyList
+
+>>> list1 = MyList()
+>>> list1.extend([100, 50, 1000, 10, 500])
+
+SUCCESS CASES
+
+Test type and inheritance
+    >>> type(list1)
+    <class '1-my_list.MyList'>
+
+    >>> isinstance(list1, list)
+    True
+
+    >>> issubclass(MyList, list)
+    True
+
+Test empty list
+    >>> elist = MyList()
+    >>> elist.print_sorted()
+    []
+
+Test list of integers
+    >>> list1.print_sorted()
+    [10, 50, 100, 500, 1000]
+
+Test __str__ ouput
+    >>> print(list1)
+    [100, 50, 1000, 10, 500]
+
+Test return new list
+    >>> list1 is list1.print_sorted()
+    [10, 50, 100, 500, 1000]
+    False
+
+Test append()
+    >>> list1.append(5000)
+    >>> list1
+    [100, 50, 1000, 10, 500, 5000]
+
+Test sorted append
+    >>> list1.append(10000)
+    >>> list1.print_sorted()
+    [10, 50, 100, 500, 1000, 5000, 10000]
+
+Test no sorted append
+    >>> list1.append(5)
+    >>> list1.print_sorted()
+    [5, 10, 50, 100, 500, 1000, 5000, 10000]
+
+Test no sorted append with negative number
+    >>> list1.append(-1)
+    >>> list1.print_sorted()
+    [-1, 5, 10, 50, 100, 500, 1000, 5000, 10000]
+
+
+"""
+Test present: check instantiation
+** Test present: check inherits from list
+** Test present: check __str__
+** Test present: check append()
+** Test present: check print_sorted() with sorted append
+** Test present: check print_sorted() with not sorted append
+** Test present: check print_sorted() with no sorted append with negative number
+** Test present: check print_sorted() with empty list
+** Test present: check print_sorted() returns a new list
+"""
