@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Module 7-base_geometry
-
-Contains a class based on 6-base_geometry
+"""Module 7-base_geometry declares a class based on 6-base_geometry
 """
 
 
@@ -28,3 +25,5 @@ class BaseGeometry():
             raise TypeError(f"{name} must be an integer")
         elif value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+        else:
+            self.name = value
