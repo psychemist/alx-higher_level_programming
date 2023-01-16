@@ -19,4 +19,4 @@ def text_indentation(text):
         text = text.replace(char, char + "\n\n")
     text_list = [line.strip(' ') for line in text.split('\n')]
     text_lines = '\n'.join(text_list)
-    print(text_lines)
+    print(text_lines, end="")
