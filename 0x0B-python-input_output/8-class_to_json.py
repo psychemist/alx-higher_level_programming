@@ -15,15 +15,16 @@ def class_to_json(obj):
         Dictionary description with simple data structure
         for JSON serialization of an object:
     """
-    attrs = {}
+    """attrs = {}
     for name in obj.__dict__:
         if name[0] != "_":
             attr = getattr(obj, name)
             attrs[name] = attr
     return attrs
+    """
 
     """
     Alternatively:
-        return {name: attr for name, attr in obj.__dict__.items()
-                          if not name.startswith("__")}
     """
+    return {name: attr for name, attr in obj.__dict__.items()
+            if not name.startswith("__")}
