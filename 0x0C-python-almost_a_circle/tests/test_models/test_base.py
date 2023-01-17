@@ -13,3 +13,7 @@ class TestBaseClass(unittest.TestCase):
 
     def test_neg_id(self):
         self.assertEqual(Base(-5).id, -5)
+
+    def test_multiple_args(self):
+        with self.assertRaises(TypeError):
+            Base(2,4)
