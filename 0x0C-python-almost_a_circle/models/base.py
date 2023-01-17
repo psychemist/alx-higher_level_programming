@@ -8,7 +8,7 @@ class Base():
     Defines a base class with a private class attribute
 
     Attributes:
-        __nb_objects (int): alternate id of unidentified instance objects 
+        __nb_objects (int): alternate id of unidentified instance objects
     """
     __nb_objects = 0
 
@@ -24,4 +24,3 @@ class Base():
         else:
             Base.__nb_objects += 1
             self.id = self.__class__.__nb_objects
-
