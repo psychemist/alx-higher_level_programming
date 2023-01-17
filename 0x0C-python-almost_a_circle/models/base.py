@@ -5,7 +5,7 @@
 
 class Base():
     """
-    Defines a basee class with a private class attribute
+    Defines a base class with a private class attribute
 
     Attributes:
         __nb_objects (int): alternate id of unidentified instance objects 
