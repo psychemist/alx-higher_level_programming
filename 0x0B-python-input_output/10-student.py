@@ -29,9 +29,8 @@ class Student:
         """
         attr_dict = {}
         if attrs is not None:
-            for name in attrs:
-                if name in self.__dict__:
-                    attr = getattr(self, name)
-                    attr_dict[name] = attr
+            for attr in attrs:
+                if attr in self.__dict__:
+                    attr_dict[attr] = getattr(self, attr)
             return attr_dict
         return self.__dict__

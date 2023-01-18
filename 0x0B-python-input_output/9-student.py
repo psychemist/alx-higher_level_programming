@@ -27,5 +27,4 @@ class Student:
         Returns:
             Dictionary representation of a Student instance object
         """
-        return {name: attr for name, attr in self.__dict__.items()
-                if not name.startswith("__")}
+        return self.__dict__ 
