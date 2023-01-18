@@ -156,11 +156,6 @@ class Rectangle:
         elif isinstance(rect_2, Rectangle) is False:
             raise TypeError("rect_2 must be an instance of Rectangle")
 
-        """if rect_1 >= rect_2:
-            return rect_1
-        else:
-            return rect_2"""
-
         return rect_1 > rect_2
 
     @classmethod
