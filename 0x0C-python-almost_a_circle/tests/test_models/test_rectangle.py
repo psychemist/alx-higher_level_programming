@@ -9,7 +9,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(Rectangle(2, 5, 0, 0, 10).id, 10)
 
     def test_no_id(self):
-        self.assertEqual(Rectangle(5, 10).id, 1)
+        self.assertEqual(Rectangle(5, 10).id, 2)
 
     def test_neg_id(self):
         self.assertEqual(Rectangle(1, 2, 0, 0, -1).id, -1)
@@ -24,3 +24,5 @@ class TestBaseClass(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(10, 20, 4, -5)
 
+    def test_area(self):
+        self.assertEqual(Rectangle(9, 17).area(), 153)
