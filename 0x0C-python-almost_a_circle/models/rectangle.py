@@ -88,6 +88,14 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+    def __str__(self):
+        """Returns string representation of Rectangle instance object
+        """
+        string1 = f"[{self.__class__.__name__}] ({self.id}) "
+        string2 = f"{self.x}/{self.y} - {self.width}/{self.height}"
+        string = string1 + string2
+        return string
+
     def area(self):
         """Returns the area value of the Rectangle instance"""
         return (self.width * self.height)
