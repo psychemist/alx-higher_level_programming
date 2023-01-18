@@ -26,3 +26,4 @@ class TestBaseClass(unittest.TestCase):
 
     def test_area(self):
         self.assertEqual(Rectangle(9, 17).area(), 153)
+
