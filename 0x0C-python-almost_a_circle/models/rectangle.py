@@ -101,8 +101,12 @@ class Rectangle(Base):
         print("\n".join([" " * self.x + "#" * self.width
                          for row in range(self.height)]))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assigns an argument to each instance attribute"""
-        attrs = ["id", "width", "height", "x", "y"]
-        for num in range(len(args)):
-            setattr(self, attrs[num], args[num])
+        if args and len(args) != 0:
+            attrs = ["id", "width", "height", "x", "y"]
+            for num in range(len(args)):
+                setattr(self, attrs[num], args[num])
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
