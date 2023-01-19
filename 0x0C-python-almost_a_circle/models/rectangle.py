@@ -5,8 +5,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    Defines a rectangle class with private instance attribute
+    """Defines a rectangle class with private instance attributes
     and public instance methods
 
     Attributes:
