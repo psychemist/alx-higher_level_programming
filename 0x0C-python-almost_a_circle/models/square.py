@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module square inherits from Rectangle class defined in rectangle module"""
+"""Module square inherits from Rectangle class defined in rectangle module
+"""
 from models.rectangle import Rectangle
 
 
@@ -22,3 +23,10 @@ class Square(Rectangle):
             y (int): vertical position of object instance along y-axis
         """
         super().__init__(size, size, x, y, id)
+
+    def __str__(self):
+        """Returns string representation of Sqaure instance object"""
+        string1 = f"[{self.__class__.__name__}] ({self.id}) "
+        string2 = f"{self.x}/{self.y} - {self.width}"
+        string = string1 + string2
+        return string
