@@ -63,6 +63,23 @@ class Base():
             f.write(cls.to_json_string(obj_list))
 
     @classmethod
+    def load_from_file(cls):
+        """Returns a list of constructed instances"""
+        filename = f"{cls.__name__}.json"
+        inst_list = []
+        
+        try:
+            with open(filename, mode="r", encoding="utf-8") as f:
+                obj_list = cls.from_json_string(f.read())
+                for objs in obj_list:
+                    obj = cls.create(**objs)
+                    inst_list.append(obj)
+        except FileNotFoundError:
+            pass
+        finally:
+            return inst_list
+
+    @classmethod
     def create(cls, **dictionary):
         """Returns: an instance object with all attributes already set
 
@@ -70,8 +87,8 @@ class Base():
                 dictionary (dict): keywords and values of instance attributes
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls(10, 10, 0, 0)
+            dummy = cls(10, 10)
         if cls.__name__ == "Square":
-            dummy = cls(10, 0, 0)
+            dummy = cls(10)
         dummy.update(**dictionary)
         return dummy
