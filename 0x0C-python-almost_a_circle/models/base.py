@@ -67,7 +67,7 @@ class Base():
         """Returns a list of constructed instances"""
         filename = f"{cls.__name__}.json"
         inst_list = []
-        
+
         try:
             with open(filename, mode="r", encoding="utf-8") as f:
                 obj_list = cls.from_json_string(f.read())
