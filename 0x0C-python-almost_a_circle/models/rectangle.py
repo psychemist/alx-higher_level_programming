@@ -34,8 +34,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Returns: width of Rectangle instance
-        """
+        """Returns: width of Rectangle instance"""
         return self.__width
 
     @width.setter
@@ -48,8 +47,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Returns: height of Rectangle instance
-        """
+        """Returns: height of Rectangle instance"""
         return self.__height
 
     @height.setter
@@ -62,8 +60,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Returns: x-coordinate of Rectangle instance
-        """
+        """Returns: x-coordinate of Rectangle instance"""
         return self.__x
 
     @x.setter
@@ -76,8 +73,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Returns: y-coordinate of Rectangle instance
-        """
+        """Returns: y-coordinate of Rectangle instance"""
         return self.__y
 
     @y.setter
@@ -89,8 +85,7 @@ class Rectangle(Base):
         self.__y = value
 
     def __str__(self):
-        """Returns string representation of Rectangle instance object
-        """
+        """Returns string representation of Rectangle instance object"""
         string1 = f"[{self.__class__.__name__}] ({self.id}) "
         string2 = f"{self.x}/{self.y} - {self.width}/{self.height}"
         string = string1 + string2
@@ -105,3 +100,9 @@ class Rectangle(Base):
         print("\n" * self.y, end="")
         print("\n".join([" " * self.x + "#" * self.width
                          for row in range(self.height)]))
+
+    def update(self, *args):
+        """Assigns an argument to each instance attribute"""
+        attrs = ["id", "width", "height", "x", "y"]
+        for num in range(len(args)):
+            setattr(self, attrs[num], args[num])
