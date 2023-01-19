@@ -29,12 +29,22 @@ class Base():
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list_dictionaries
 
-            Args:
-                list_dictionaries (list): dict of instances inherited from base
+        Args:
+            list_dictionaries (list): dict of instances inherited from base
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             list_dictionaries = []
         return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of the JSON string representation of an instance
+        Args:
+            json_string (str): string containing list of instance dictionaries
+        """
+        if json_string is None or len(json_string) == 0:
+            json_string = "[]"
+        return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
