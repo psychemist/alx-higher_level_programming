@@ -101,7 +101,7 @@ class Rectangle(Base):
                          for row in range(self.height)]))
 
     def update(self, *args, **kwargs):
-        """Assigns an argument to each instance attribute"""
+        """Assigns an argument to each Rectangle instance attribute"""
         if args and len(args) != 0:
             attrs = ["id", "width", "height", "x", "y"]
             for num in range(len(args)):
@@ -109,3 +109,9 @@ class Rectangle(Base):
         else:
             for k, v in kwargs.items():
                 setattr(self, k, v)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle instance"""
+        dicto = {'id': self.id, 'width': self.width, 
+                 'height': self.height, 'x': self.x, 'y': self.y}
+        return dicto
