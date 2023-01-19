@@ -44,5 +44,3 @@ class Square(Rectangle):
         string2 = f"{self.x}/{self.y} - {self.width}"
         string = string1 + string2
         return string
-
-
