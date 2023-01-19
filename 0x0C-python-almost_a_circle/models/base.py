@@ -61,3 +61,17 @@ class Base():
                 obj_list.append(cls.to_dictionary(obj))
         with open(filename, mode="w", encoding="utf-8") as f:
             f.write(cls.to_json_string(obj_list))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns: an instance object with all attributes already set
+
+            Args:
+                dictionary (dict): keywords and values of instance attributes
+        """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(10, 10, 0, 0)
+        if cls.__name__ == "Square":
+            dummy = cls(10, 0, 0)
+        dummy.update(**dictionary)
+        return dummy
