@@ -44,3 +44,13 @@ class Square(Rectangle):
         string2 = f"{self.x}/{self.y} - {self.width}"
         string = string1 + string2
         return string
+
+    def update(self, *args, **kwargs):
+        """Assigns an argument to each Square instance attribute"""
+        if args and len(args) != 0:
+            attrs = ["id", "size", "x", "y"]
+            for num in range(len(args)):
+                setattr(self, attrs[num], args[num])
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
