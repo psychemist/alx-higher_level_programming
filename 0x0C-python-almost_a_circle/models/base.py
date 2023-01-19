@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module base contains the base class of future classes
 """
+import csv
 import json
 
 
@@ -47,39 +48,6 @@ class Base():
         return json.loads(json_string)
 
     @classmethod
-    def save_to_file(cls, list_objs):
-        """Writes the JSON string representation of list_objs to a file
-
-            Args:
-                list_objs (list): list of instances that inherit from Base
-        """
-        filename = f"{cls.__name__}.json"
-        obj_list = []
-
-        if list_objs is not None:
-            for obj in list_objs:
-                obj_list.append(cls.to_dictionary(obj))
-        with open(filename, mode="w", encoding="utf-8") as f:
-            f.write(cls.to_json_string(obj_list))
-
-    @classmethod
-    def load_from_file(cls):
-        """Returns a list of constructed instances"""
-        filename = f"{cls.__name__}.json"
-        inst_list = []
-
-        try:
-            with open(filename, mode="r", encoding="utf-8") as f:
-                obj_list = cls.from_json_string(f.read())
-                for objs in obj_list:
-                    obj = cls.create(**objs)
-                    inst_list.append(obj)
-        except FileNotFoundError:
-            pass
-        finally:
-            return inst_list
-
-    @classmethod
     def create(cls, **dictionary):
         """Returns: an instance object with all attributes already set
 
@@ -92,3 +60,75 @@ class Base():
             dummy = cls(10)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes the JSON string serialization of list_objs to a file
+
+            Args:
+                list_objs (list): list of instances that inherit from Base
+        """
+        filename = f"{cls.__name__}.json"
+        obj_list = []
+
+        if list_objs is not None:
+            for obj in list_objs:
+                obj_list.append(cls.to_dictionary(obj))
+
+        with open(filename, 'w') as f:
+            f.write(cls.to_json_string(obj_list))
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances from a JSON string deserialization"""
+        filename = f"{cls.__name__}.json"
+        inst_list = []
+
+        try:
+            with open(filename, 'r') as f:
+                obj_list = cls.from_json_string(f.read())
+            for obj in obj_list:
+                inst_list.append(cls.create(**obj))
+        except FileNotFoundError:
+            pass
+        finally:
+            return inst_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list of instance objects and saves to a CSV file
+
+            Args:
+                list_objs (list): list of instances that inherit from Base
+        """
+        filename = f"{cls.__name__}.csv"
+        obj_list = []
+
+        if list_objs is not None:
+            for obj in list_objs:
+                obj_list.append(cls.to_dictionary(obj))
+
+        with open(filename, 'w', newline='') as fv:
+            writer = csv.DictWriter(fv, obj_list[0].keys())
+            writer.writeheader()
+            writer.writerows(obj_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Returns a deserialized list of instance objects from a CSV file"""
+        filename = f"{cls.__name__}.csv"
+        inst_list = []
+
+        try:
+            with open(filename, 'r') as fv:
+                reader = csv.DictReader(fv)
+                obj_list = list(reader)
+            for obj in obj_list:
+                attr_list = {}
+                for name, attr in obj.items():
+                    attr_list[name] = int(attr)
+                inst_list.append(cls.create(**attr_list))
+        except FileNotFoundError:
+            pass
+        finally:
+            return inst_list

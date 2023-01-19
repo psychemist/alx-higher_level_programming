@@ -40,10 +40,9 @@ class Square(Rectangle):
 
     def __str__(self):
         """Returns string representation of Sqaure instance object"""
-        string1 = f"[{self.__class__.__name__}] ({self.id}) "
-        string2 = f"{self.x}/{self.y} - {self.width}"
-        string = string1 + string2
-        return string
+        return "[{:s}] ({:d}) {:d}/{:d} - {:d}".format(
+            self.__class__.__name__, self.id,
+            self.x, self.y, self.size)    
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each Square instance attribute"""
