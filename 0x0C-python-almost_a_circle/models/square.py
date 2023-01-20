@@ -42,7 +42,7 @@ class Square(Rectangle):
         """Returns string representation of Sqaure instance object"""
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}".format(
             self.__class__.__name__, self.id,
-            self.x, self.y, self.size)    
+            self.x, self.y, self.size)
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each Square instance attribute"""
@@ -57,5 +57,5 @@ class Square(Rectangle):
     def to_dictionary(self):
         """Returns the dictionary representation of a Square instance"""
         dictionary = {'id': self.id, 'size': self.size,
-                 'x': self.x, 'y': self.y}
+                      'x': self.x, 'y': self.y}
         return dictionary
