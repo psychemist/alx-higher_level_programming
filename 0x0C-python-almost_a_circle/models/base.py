@@ -144,34 +144,37 @@ class Base():
         """
         turt = turtle.Turtle()
         turt.screen.bgcolor("#33ffff")
-        turt.pensize(3)
+        turt.pensize(1)
         turt.shape("turtle")
 
-        turt.color("#800000")
+        turt.color("yellow", "#800000")
         for rect in list_rectangles:
             turt.showturtle()
             turt.up()
             turt.goto(rect.x, rect.y)
             turt.down()
             for i in range(2):
+                turt.begin_fill()
                 turt.forward(rect.width)
                 turt.left(90)
                 turt.forward(rect.height)
                 turt.left(90)
+                turt.end_fill()
             turt.hideturtle()
 
-        turt.color("#660066")
+        turt.color("green", "#660066")
         for sq in list_squares:
             turt.showturtle()
             turt.up()
             turt.goto(sq.x, sq.y)
             turt.down()
             for i in range(2):
+                turt.begin_fill()
                 turt.forward(sq.width)
                 turt.left(90)
                 turt.forward(sq.height)
                 turt.left(90)
+                turt.end_fill()
             turt.hideturtle()
 
         turtle.exitonclick()
-        turtle.done()
