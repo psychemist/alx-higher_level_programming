@@ -17,13 +17,13 @@ Rectangle = rectangle.Rectangle
 
 class TestPep8(unittest.TestCase):
     """Pep8 models/base.py & tests/test_models/test_base.py"""
-    def test_pep8(self):
-        """Pep8"""
-        style = pep8.StyleGuide(quiet=False)
-        errors = 0
-        files = ["models/base.py", "tests/test_models/test_base.py"]
-        errors += style.check_files(files).total_errors
-        self.assertEqual(errors, 0, 'Need to fix Pep8')
+    def test_pep8_conformance(self):
+        """Test that modules conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=False)
+        result = pep8style.check_files(["models/base.py",
+                                        "tests/test_models/test_base.py"])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
 
 
 class TestBase(unittest.TestCase):
