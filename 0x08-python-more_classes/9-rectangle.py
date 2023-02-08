@@ -7,7 +7,7 @@ Defines a rectangle based on 8-rectangle.py
 
 class Rectangle:
     """
-    Defines a rectangle class with a public class attributes,
+    Defines a rectangle class with public class attributes,
     private instance attributes, and public instance methods
 
     Attributes:
