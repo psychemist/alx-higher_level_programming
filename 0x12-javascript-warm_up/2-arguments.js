@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
 // Include process module
-const process = require('process');
+const argv = require('process').argv;
 
 // Loop over each argument and print log
-if (process.argv.length === 2) {
+if (argv.length === 2) {
   console.log('No argument');
-} else if (process.argv.length === 3) {
+} else if (argv.length === 3) {
   console.log('Argument found');
 } else console.log('Arguments found');

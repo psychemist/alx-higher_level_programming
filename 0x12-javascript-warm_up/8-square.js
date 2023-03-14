@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
-const process = require('process');
+const argv = require('process').argv;
 
-if (Number.isInteger(Number(process.argv[2]))) {
-  const size = parseInt(process.argv[2]);
+if (Number.isInteger(Number(argv[2]))) {
+  const size = parseInt(argv[2]);
   const square = [];
   let line;
 
