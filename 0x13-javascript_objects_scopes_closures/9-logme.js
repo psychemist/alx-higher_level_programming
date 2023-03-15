@@ -3,5 +3,5 @@
 let log = -1;
 exports.logMe = function (item) {
   log++;
-  console.log(`${log} : ${item}`);
+  console.log(log + ':' + item);
 };
