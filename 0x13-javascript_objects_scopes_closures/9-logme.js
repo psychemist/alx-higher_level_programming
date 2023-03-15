@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-log = 0;
+let log = 0;
 exports.logMe = function (item) {
   console.log(`${log++} : ${item}`);
-}
+};
