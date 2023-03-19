@@ -11,6 +11,7 @@ if __name__ == '__main__':
     # connect to database
     conn = MySQLdb.connect(host="localhost", port=3306,
                            user=argv[1], passwd=argv[2], db=argv[3])
+
     # activate cursor and execute query
     cursor = conn.cursor()
     query = """SELECT cities.name
@@ -20,6 +21,7 @@ if __name__ == '__main__':
                 WHERE states.name = '{:s}'
             """.format(argv[4])
     cursor.execute(query)
+
     # print rows
     print(', '.join(row[0] for row in cursor.fetchall()))
     cursor.close()
