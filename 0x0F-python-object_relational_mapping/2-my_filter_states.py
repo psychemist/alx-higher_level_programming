@@ -9,9 +9,8 @@ from sys import argv
 
 if __name__ == '__main__':
     # connect to database
-    conn = MySQLdb.connect(
-            host="localhost", port=3306,
-            user=argv[1], passwd=argv[2], db=argv[3])
+    conn = MySQLdb.connect(host="localhost", port=3306,
+                           user=argv[1], passwd=argv[2], db=argv[3])
     # activate cursor and execute query
     cursor = conn.cursor()
     query = """SELECT *
