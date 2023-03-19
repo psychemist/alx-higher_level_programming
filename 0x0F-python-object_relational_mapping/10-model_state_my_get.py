@@ -18,8 +18,8 @@ if __name__ == "__main__":
     session = Session(engine)
     valid = session.query(State).filter(State.name == argv[4]).all()
     if not valid:
-       print("Not found")
+        print("Not found")
     else:
-       print("{}".format(valid[0].id))
+        print("{}".format(valid[0].id))
 
     session.close()
