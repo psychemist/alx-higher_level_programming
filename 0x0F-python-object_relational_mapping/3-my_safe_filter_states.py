@@ -11,7 +11,10 @@ if __name__ == '__main__':
             user=argv[1], passwd=argv[2], db=argv[3])
     # activate cursor and execute query
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM states WHERE name=%s ORDER BY id ASC", (argv[4],))
+    cursor.execute("SELECT *
+                    FROM states
+                    WHERE name=%s
+                    ORDER BY id ASC", (argv[4],))
     # print rows
     for row in cursor.fetchall():
         if row[1] == argv[4]:

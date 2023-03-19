@@ -11,7 +11,8 @@ if __name__ == '__main__':
             user=argv[1], passwd=argv[2], db=argv[3])
     # activate cursor and execute query
     cursor = conn.cursor()
-    query = """SELECT * FROM states
+    query = """SELECT *
+               FROM states
                WHERE name = '{:s}'
                ORDER BY id ASC""".format(argv[4])
     cursor.execute(query)
