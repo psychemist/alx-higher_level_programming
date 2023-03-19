@@ -14,9 +14,9 @@ if __name__ == '__main__':
     # activate cursor and execute query
     cursor = conn.cursor()
     cursor.execute("""SELECT *
-                      FROM states
-                      WHERE name=%s
-                      ORDER BY id ASC""", (argv[4],))
+                        FROM states
+                       WHERE name=%s
+                       ORDER BY id ASC""", (argv[4],))
     # print rows
     for row in cursor.fetchall():
         if row[1] == argv[4]:
