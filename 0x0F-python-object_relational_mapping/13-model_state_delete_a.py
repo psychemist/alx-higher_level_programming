@@ -18,7 +18,7 @@ if __name__ == "__main__":
     # construct orm query and delete State class instance objects
     session = Session(engine)
     session.query(State).filter(State.name.like(
-            "%h%")).delete(synchronize_session='fetch')
+            "%a%")).delete(synchronize_session='fetch')
 
     # save object in database and end DB session
     session.commit()
