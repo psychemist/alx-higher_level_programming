@@ -14,14 +14,16 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    # open new database session
+    # open a database session then create and add new State instance
     session = Session(engine)
 
-    # create and add new State object
     louie = State(id=6,
                   name="Louisiana")
     session.add(louie)
     session.commit()
-    print("".format(louie.id))
+
+    # print new instance id 
+    for state in session.query(State).filter(State.name == "Louisiana").all():
+        print("{}".format(state.id))
 
     session.close()
