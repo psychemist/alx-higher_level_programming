@@ -22,6 +22,6 @@ if __name__ == "__main__":
                   name="Louisiana")
     session.add(louie)
     session.commit()
-    print(louie.id)
+    print("".format(louie.id))
 
     session.close()
