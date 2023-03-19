@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-2-my_filter_states module lists all states
+2-my_filter_states module filters all states
 from the database hbtn_0e_0_usa
 that correspond with the searched name input
 '''

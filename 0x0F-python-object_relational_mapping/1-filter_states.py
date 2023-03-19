@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-1-filter_states module lists all states
+1-filter_states module filters all states
 from the database hbtn_0e_0_usa
 basded on states that begin with 'N'
 '''

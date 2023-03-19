@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 '''
-3-my_safe_filter_states module lists all states
-from the database hbtn_0e_0_usa
-while prevent SQL injections
+3-my_safe_filter_states module filters all states
+from the database hbtn_0e_0_usa that correspond
+with searched input while preventing SQL injections
 '''
 import MySQLdb
 from sys import argv
