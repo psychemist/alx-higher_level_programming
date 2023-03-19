@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-'''0-select_states module lists all states from the database hbtn_0e_0_usa
+'''
+2-my_filter_states module lists all states
+from the database hbtn_0e_0_usa
+that correspond with the searched name input
 '''
 import MySQLdb
 from sys import argv
