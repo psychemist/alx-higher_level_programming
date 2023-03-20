@@ -17,8 +17,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = Session(engine)
 
-    # create and add new State instance to table
-    for state in session.query(State).join(
+    # query ORM and list all state and city instances
+    for state in session.query(State).outerjoin(
             City).order_by(State.id, City.id).all():
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
