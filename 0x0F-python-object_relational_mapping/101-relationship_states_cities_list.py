@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''
-creates the State “California” with the City “San Francisco”
-from the database hbtn_0e_100_usa
+lists all State objects, and corresponding City objects
+contained in the database hbtn_0e_101_usa
 '''
 from relationship_city import City
 from relationship_state import Base, State
@@ -20,9 +20,9 @@ if __name__ == "__main__":
     # create and add new State instance to table
     for state in session.query(State).join(
             City).order_by(State.id, City.id).all():
-        print("{:d}: {:s}".format(state.id, state.name))
+        print("{}: {}".format(state.id, state.name))
         for city in state.cities:
-            print("\t{:d}: {:s}".format(city.id, city.name))
+            print("\t{}: {}".format(city.id, city.name))
 
     session.commit()
     session.close()
