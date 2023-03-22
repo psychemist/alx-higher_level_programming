@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     # list all city instances in table
     for city in session.query(City).join(
-            State).order_by(City.id).all():
+                State).order_by(City.id).all():
         print("{}: {} -> {}".format(city.id, city.name, city.state.name))
 
     session.commit()
