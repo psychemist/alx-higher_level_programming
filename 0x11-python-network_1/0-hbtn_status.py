@@ -8,6 +8,6 @@ if __name__ == "__main__":
             'https://alx-intranet.hbtn.io/status') as response:
         status = response.read()
         print("Body of response:")
-        print(f"\t- type: {type(status)}")
-        print(f"\t- content: {status}")
-        print(f"\t- utf8 content: {status.decode('utf-8')}")
+        print("\t- type: {}".format(type(status)))
+        print("\t- content: {}".format(status))
+        print("\t- utf8 content: {}".format(status.decode('utf-8')))
