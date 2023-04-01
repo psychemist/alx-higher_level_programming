@@ -9,4 +9,4 @@ with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
     - type: {}
     - content: {}
     - utf8 content: {}'''.
-          format(type(status), status, status.decode('utf8')))
+          format(type(status), status, response.__dict__.get('msg')))
