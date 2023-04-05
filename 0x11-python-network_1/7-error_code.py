@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 '''
-takes in a URL, sends a request to the URL and
-displays the body of the response (decoded in utf-8)
+takes in a URL, sends a request to the URL and displays the response body
 '''
 from sys import argv
-from urllib import request
-from urllib import error
+import requests
 
 if __name__ == "__main__":
-    try:
-        with request.urlopen(argv[1]) as response:
-            print(response.read().decode('utf-8'))
-    except error.HTTPError as e:
-        print("Error code: {}".format(e.code))
+    response = requests.get(argv[1])
+
+    if response.status_code >= 400:
+        print(f"Error code: {response.status_code}")
+    else:
+        print(response.text)
