@@ -6,7 +6,6 @@ const request = require('request');
 request(url, (err, response, body) => {
   if (!err && response.statusCode === 200) {
     const films = JSON.parse(body);
-    const movies = []
     let count = 0;
 
     for (const film of films.results) {
