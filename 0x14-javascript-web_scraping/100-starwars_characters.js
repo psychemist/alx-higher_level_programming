@@ -6,9 +6,9 @@ const request = require('request');
 
 request(url, (err, response, body) => {
   if (!err && response.statusCode === 200) {
-    const movie = JSON.parse(body);
+    const characters = JSON.parse(body).characters;
 
-    for (const xter of movie.characters) {
+    for (const xter of characters) {
       request(xter, (err, response, body) => {
         if (!err && response.statusCode === 200) {
           console.log(JSON.parse(body).name);
