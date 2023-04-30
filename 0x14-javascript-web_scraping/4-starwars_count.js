@@ -1,23 +1,22 @@
 #!/usr/bin/node
 
 const url = process.argv[2];
-const id = 18;
-const antilles = `https://swapi-api.alx-tools.com/api/people/${id}/`;
 const request = require('request');
 
 request(url, (err, response, body) => {
   if (!err && response.statusCode === 200) {
     const films = JSON.parse(body);
-    let wedge = 0;
+    const movies = []
+    let count = 0;
 
     for (const film of films.results) {
       for (const xter of film.characters) {
-        if (xter === antilles) {
-          wedge++;
+        if (xter.includes('18')) {
+          count++;
         }
       }
     }
 
-    console.log(wedge);
+    console.log(count);
   }
 });
