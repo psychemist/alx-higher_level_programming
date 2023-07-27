@@ -12,7 +12,7 @@ class Rectangle(BaseGeometry):
         Instantiates an instance object
 
         Args:
-            width (int): length of shoter side of rectangle
+            width (int): length of shorter side of rectangle
             height (int): length of longer side of rectangle
         """
 
@@ -22,12 +22,10 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
-        """Returns the area of the Rectangle instance object
-        """
+        """Returns the area of the Rectangle instance object"""
         return (self.__width * self.__height)
 
     def __str__(self):
-        """Returns string representation of Rectangle instance object
-        """
+        """Returns string representation of Rectangle instance object"""
         string = f"[Rectangle] {self.__width}/{self.__height}"
         return string
