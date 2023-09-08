@@ -24,6 +24,7 @@ if __name__ == '__main__':
     stop = False
     r = 0
     c = 0
+
     # iterate through rows
     while r < n:
         goback = False
